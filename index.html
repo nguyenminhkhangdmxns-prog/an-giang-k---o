@@ -3,957 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Cẩm nang khám phá An Giang: Núi Cấm, Miếu Bà Chúa Xứ Núi Sam, rừng tràm Trà Sư, văn hóa, ẩm thực và gợi ý lịch trình.">
-<title>Khám phá An Giang | Du lịch, văn hóa và ẩm thực</title>
-
+<title>Khám phá An Giang</title>
 <style>
-:root {
-  --navy: #123047;
-  --blue: #087e8b;
-  --green: #2e7655;
-  --gold: #f1b84b;
-  --ink: #193447;
-  --muted: #617585;
-  --pale: #f1f8f5;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 82px;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--ink);
-  line-height: 1.7;
-  background: #fff;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button, input {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-  border: 0;
-}
-
-.container {
-  width: min(1160px, 92%);
-  margin: auto;
-}
-
-/* THANH MENU */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(18, 48, 71, .97);
-  color: white;
-  box-shadow: 0 3px 18px #001a2b24;
-}
-
-.nav {
-  min-height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 900;
-  font-size: 22px;
-}
-
-.brand-icon {
-  font-size: 31px;
-}
-
-.brand small {
-  display: block;
-  font-size: 10px;
-  font-weight: 500;
-  color: #cde4e7;
-  letter-spacing: .5px;
-}
-
-.navlinks {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.navlinks a {
-  font-size: 13px;
-  font-weight: 700;
-  color: #f2fbff;
-}
-
-.navlinks a:hover {
-  color: var(--gold);
-}
-
-.menu-btn {
-  display: none;
-  background: transparent;
-  color: white;
-  font-size: 26px;
-}
-
-/* ẢNH BÌA */
-.hero {
-  min-height: 520px;
-  display: flex;
-  align-items: center;
-  color: white;
-  background:
-    linear-gradient(90deg, rgba(7,31,46,.82), rgba(7,31,46,.22)),
-    url('https://commons.wikimedia.org/wiki/Special:FilePath/N%C3%BAi%20%E1%BB%9F%20An%20Giang.jpg?width=1800')
-    center 48% / cover;
-}
-
-.hero-content {
-  padding: 76px 0;
-  max-width: 720px;
-}
-
-.eyebrow, .section-label {
-  font-size: 12px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 1.8px;
-  color: #d5f4dc;
-}
-
-.hero h1 {
-  font-size: clamp(42px, 7vw, 76px);
-  line-height: 1.05;
-  margin: 14px 0 20px;
-}
-
-.hero h1 span {
-  color: #ffd16b;
-}
-
-.hero p {
-  font-size: 18px;
-  max-width: 610px;
-  color: #f3fbff;
-  margin-bottom: 25px;
-}
-
-.actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 21px;
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: 800;
-  transition: .2s;
-}
-
-.btn-primary {
-  background: var(--gold);
-  color: #183447;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.04);
-}
-
-.btn-outline {
-  border: 1px solid #ffffffb5;
-  background: #ffffff12;
-  color: white;
-}
-
-.btn-outline:hover {
-  background: #ffffff2a;
-}
-
-/* GIỚI THIỆU */
-section {
-  padding: 64px 0;
-}
-
-.intro {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 42px;
-  align-items: center;
-}
-
-.section-label {
-  color: var(--blue);
-}
-
-h2 {
-  font-size: clamp(27px, 4vw, 39px);
-  line-height: 1.2;
-  margin: 8px 0 17px;
-  color: var(--navy);
-}
-
-.intro p, .section-intro {
-  color: var(--muted);
-  margin: 0 0 15px;
-}
-
-.photo-frame {
-  position: relative;
-}
-
-.photo-frame img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 24px;
-  box-shadow: 0 18px 42px #153c5125;
-}
-
-.photo-tag {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  background: white;
-  padding: 9px 14px;
-  border-radius: 12px;
-  font-weight: 800;
-  box-shadow: 0 5px 20px #0002;
-}
-
-/* THÔNG TIN NỔI BẬT */
-.stats {
-  background: var(--pale);
-  padding: 25px 0;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  text-align: center;
-}
-
-.stat strong {
-  display: block;
-  color: var(--green);
-  font-size: 25px;
-}
-
-.stat span {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.center {
-  text-align: center;
-}
-
-.center .section-label {
-  display: block;
-}
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 17px;
-  margin-top: 28px;
-}
-
-.feature {
-  padding: 22px;
-  border: 1px solid #e3eeea;
-  border-radius: 18px;
-  background: white;
-}
-
-.feature .emoji {
-  font-size: 29px;
-}
-
-.feature h3 {
-  font-size: 17px;
-  margin: 7px 0;
-}
-
-.feature p {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-/* ĐỊA ĐIỂM DU LỊCH */
-.places {
-  background: #f0f7fa;
-}
-
-.section-head {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.section-head p {
-  max-width: 450px;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.place-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-top: 29px;
-}
-
-.place-card {
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 26px #173d5b10;
-  transition: .22s;
-}
-
-.place-card:hover {
-  transform: translateY(-5px);
-}
-
-.place-card img {
-  display: block;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  background: #e6eeee;
-}
-
-.place-body {
-  padding: 19px;
-}
-
-.tag {
-  display: inline-block;
-  background: #e6f5ed;
-  color: #286747;
-  border-radius: 20px;
-  padding: 3px 10px;
-  font-size: 11px;
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-.place-body h3 {
-  font-size: 19px;
-  margin-bottom: 7px;
-  color: var(--navy);
-}
-
-.place-body p {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 12px;
-}
-
-.more {
-  background: none;
-  color: var(--blue);
-  font-weight: 900;
-  font-size: 13px;
-  padding: 0;
-}
-
-.more:hover {
-  text-decoration: underline;
-}
-
-/* VĂN HÓA */
-.culture-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  align-items: start;
-  margin-top: 25px;
-}
-
-.info-panel {
-  background: var(--pale);
-  padding: 24px;
-  border-radius: 20px;
-}
-
-.info-panel h3 {
-  margin-bottom: 10px;
-}
-
-.info-panel li {
-  margin: 8px 0 8px 20px;
-  color: var(--muted);
-}
-
-/* ẨM THỰC */
-.food-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 24px;
-}
-
-.food {
-  border: 1px solid #e3ece8;
-  border-radius: 16px;
-  padding: 20px;
-}
-
-.food .emoji {
-  font-size: 30px;
-}
-
-.food h3 {
-  font-size: 16px;
-  margin: 6px 0;
-}
-
-.food p {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-/* LỊCH TRÌNH */
-.itinerary {
-  background: #f9f5e9;
-}
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 17px;
-  margin-top: 25px;
-}
-
-.step {
-  background: white;
-  border-radius: 18px;
-  padding: 22px;
-  border: 1px solid #eee5d0;
-}
-
-.step-number {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #fff0c9;
-  display: grid;
-  place-items: center;
-  font-weight: 900;
-  color: #77530a;
-  margin-bottom: 10px;
-}
-
-.step h3 {
-  font-size: 17px;
-  margin-bottom: 6px;
-}
-
-.step p {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-/* MẸO DU LỊCH */
-.tips {
-  background: #e9f5f0;
-}
-
-.tips-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 24px;
-}
-
-.tip {
-  background: white;
-  border-radius: 16px;
-  padding: 20px;
-}
-
-.tip h3 {
-  font-size: 16px;
-  margin-bottom: 7px;
-}
-
-.tip p {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-/* THÔNG ĐIỆP */
-.quote {
-  background: linear-gradient(120deg, #123047, #147a79);
-  color: white;
-  text-align: center;
-  padding: 55px 0;
-}
-
-.quote blockquote {
-  font-size: clamp(21px, 3.5vw, 32px);
-  font-weight: 800;
-  max-width: 850px;
-  margin: 0 auto 12px;
-  line-height: 1.4;
-}
-
-.quote p {
-  color: #d9f2ee;
-}
-
-/* LIÊN HỆ */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px;
-}
-
-.contact p {
-  color: var(--muted);
-  margin: 10px 0;
-}
-
-.newsletter {
-  display: flex;
-  gap: 9px;
-  margin-top: 16px;
-}
-
-.newsletter input {
-  min-width: 0;
-  flex: 1;
-  border: 1px solid #d5e2e7;
-  border-radius: 30px;
-  padding: 12px 16px;
-  outline-color: var(--blue);
-}
-
-.form-message {
-  font-size: 13px;
-  color: #176d46;
-  min-height: 22px;
-  margin-top: 8px;
-}
-
-.contact-note {
-  background: #f1f8f5;
-  border-radius: 16px;
-  padding: 20px;
-}
-
-/* CHÂN TRANG */
-footer {
-  background: #102b40;
-  color: white;
-  padding: 30px 0;
-}
-
-.footer-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-footer p {
-  font-size: 12px;
-  color: #c4d8df;
-}
-
-.credits {
-  font-size: 11px;
-  color: #bcd0d8;
-  margin-top: 8px;
-  max-width: 760px;
-}
-
-.socials {
-  display: flex;
-  gap: 9px;
-}
-
-.socials a {
-  height: 34px;
-  width: 34px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #ffffff18;
-}
-
-/* NÚT VÀ THÔNG BÁO */
-#topBtn {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--blue);
-  color: white;
-  font-size: 20px;
-  display: none;
-  z-index: 10;
-}
-
-.toast {
-  position: fixed;
-  left: 50%;
-  bottom: 25px;
-  transform: translate(-50%, 20px);
-  max-width: min(560px, 90%);
-  background: #123047;
-  color: white;
-  padding: 14px 18px;
-  border-radius: 12px;
-  opacity: 0;
-  transition: .25s;
-  pointer-events: none;
-  z-index: 30;
-  font-size: 14px;
-  box-shadow: 0 8px 25px #0003;
-}
-
-.toast.show {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
-
-/* HIỂN THỊ TRÊN MÁY TÍNH BẢNG */
-@media (max-width: 900px) {
-  .navlinks {
-    gap: 10px;
-  }
-
-  .navlinks a {
-    font-size: 11px;
-  }
-
-  .feature-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .place-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 20px;
-  }
-}
-
-/* HIỂN THỊ TRÊN ĐIỆN THOẠI */
-@media (max-width: 650px) {
-  .nav {
-    min-height: 64px;
-  }
-
-  .menu-btn {
-    display: block;
-  }
-
-  .navlinks {
-    display: none;
-    position: absolute;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: #123047;
-    padding: 18px 5%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  .navlinks.open {
-    display: flex;
-  }
-
-  .navlinks a {
-    font-size: 15px;
-  }
-
-  .hero {
-    min-height: 470px;
-    background-position: 57% center;
-  }
-
-  .hero-content {
-    padding: 55px 0;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  section {
-    padding: 45px 0;
-  }
-
-  .intro, .culture-grid, .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .photo-frame img {
-    height: 250px;
-  }
-
-  .feature-grid {
-    gap: 12px;
-  }
-
-  .feature {
-    padding: 16px;
-  }
-
-  .place-grid, .food-grid, .steps, .tips-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .place-card img {
-    height: 220px;
-  }
-
-  .section-head {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .newsletter {
-    flex-direction: column;
-  }
-
-  .newsletter .btn {
-    width: 100%;
-  }
-
-  .footer-row {
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *, *:before, *:after {
-    transition: none !important;
-  }
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;color:#173b35;line-height:1.7}
+header{background:#124638;color:white;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+header h2{font-size:21px}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#ffd66b}
+.hero{min-height:440px;padding:80px 8%;display:flex;align-items:center;color:white;background:linear-gradient(90deg,#092d25dd,#092d2533),url('https://mia.vn/media/uploads/blog-du-lich/hanh-huong-nui-cam-tim-ve-noi-linh-thieng-va-ky-bi-o-vung-nam-bo-03-1660155614.jpeg') center/cover}
+.hero h1{font-size:clamp(36px,6vw,64px);line-height:1.15}
+.hero p{max-width:650px;margin:18px 0;font-size:17px}
+.btn{display:inline-block;background:#ffd166;color:#173b35;padding:11px 20px;border-radius:25px;text-decoration:none;font-weight:bold}
+section{padding:55px 7%}
+h2.title{text-align:center;color:#14644e;font-size:32px;margin-bottom:12px}
+.intro{text-align:center;max-width:850px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
+.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 4px 18px #163c3020;border:1px solid #e5eee8}
+.card img{width:100%;height:220px;object-fit:cover;display:block;background:#e8efeb}
+.card div{padding:18px}
+.card h3{color:#14644e;margin-bottom:8px}
+.card p{font-size:14px;color:#52675f}
+.tag{display:inline-block;background:#e1f4e9;color:#176445;border-radius:20px;padding:3px 10px;font-size:12px;margin-bottom:8px}
+.about{background:#eff7f1}
+.food{background:#fff9e9}
+.tips{background:#eff7f1}
+ul{padding-left:22px}
+li{margin:8px 0}
+footer{background:#103b31;color:white;text-align:center;padding:28px}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:550px){.grid{grid-template-columns:1fr}header{justify-content:center}nav{justify-content:center}.hero{padding:55px 7%;min-height:400px}}
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="container nav">
-    <a class="brand" href="#home">
-      <span class="brand-icon">🌿</span>
-      <span>
-        KHÁM PHÁ AN GIANG
-        <small>THIÊN NHIÊN · VĂN HÓA · ẨM THỰC</small>
-      </span>
-    </a>
-
-    <button class="menu-btn" id="menuBtn"
-      aria-label="Mở menu" aria-expanded="false">☰</button>
-
-    <nav class="navlinks" id="navlinks">
-      <a href="#home">Trang chủ</a>
-      <a href="#about">Giới thiệu</a>
-      <a href="#places">Địa điểm</a>
-      <a href="#culture">Văn hóa</a>
-      <a href="#food">Ẩm thực</a>
-      <a href="#itinerary">Lịch trình</a>
-      <a href="#contact">Liên hệ</a>
-    </nav>
-  </div>
+<h2>🌿 KHÁM PHÁ AN GIANG</h2>
+<nav>
+<a href="#home">Trang chủ</a>
+<a href="#about">Giới thiệu</a>
+<a href="#places">Địa điểm</a>
+<a href="#culture">Văn hóa</a>
+<a href="#food">Ẩm thực</a>
+<a href="#tips">Kinh nghiệm</a>
+</nav>
 </header>
 
 <main>
-
-<!-- TRANG CHỦ -->
 <section class="hero" id="home">
-  <div class="container hero-content">
-    <div class="eyebrow">Chạm vào vẻ đẹp miền Tây Nam Bộ</div>
-
-    <h1>Khám phá<br>
-      <span>An Giang thân thương</span>
-    </h1>
-
-    <p>
-      Từ vùng Thất Sơn hùng vĩ đến rừng tràm xanh mát,
-      từ những công trình tâm linh nổi tiếng đến hương vị dân dã —
-      An Giang mang đến nhiều trải nghiệm đáng nhớ cho mỗi hành trình.
-    </p>
-
-    <div class="actions">
-      <a class="btn btn-primary" href="#places">
-        🧭 Khám phá địa điểm
-      </a>
-      <a class="btn btn-outline" href="#itinerary">
-        🗺️ Gợi ý lịch trình
-      </a>
-    </div>
-  </div>
+<div>
+<h1>Khám phá<br>An Giang thân thương</h1>
+<p>Về với vùng đất miền Tây Nam Bộ, nơi có núi non hùng vĩ, những cánh rừng tràm xanh mát, di tích văn hóa đặc sắc và nền ẩm thực phong phú.</p>
+<a class="btn" href="#places">Khám phá ngay →</a>
+</div>
 </section>
 
-<!-- GIỚI THIỆU -->
-<section id="about">
-  <div class="container intro">
-    <div>
-      <span class="section-label">Xin chào từ An Giang</span>
-      <h2>Một vùng đất, nhiều sắc màu</h2>
-
-      <p>
-        An Giang nằm ở vùng Tây Nam Bộ, nổi bật với cảnh quan
-        đồng bằng sông nước và vùng núi thuộc Thất Sơn.
-        Đây là nơi du khách có thể kết hợp khám phá thiên nhiên,
-        tìm hiểu lịch sử địa phương và trải nghiệm đời sống văn hóa phong phú.
-      </p>
-
-      <p>
-        Vùng đất này gắn với những địa danh quen thuộc như Núi Cấm,
-        Miếu Bà Chúa Xứ Núi Sam, rừng tràm Trà Sư và hồ Tà Pạ.
-        Mỗi nơi mang một nét riêng, từ không gian xanh yên bình
-        đến kiến trúc và sinh hoạt tín ngưỡng đặc sắc.
-      </p>
-
-      <p>
-        Website được xây dựng nhằm giới thiệu điểm đến,
-        gợi ý hoạt động và khuyến khích mọi người du lịch có trách nhiệm:
-        tôn trọng văn hóa địa phương, giữ gìn môi trường và bảo vệ cảnh quan.
-      </p>
-
-      <a class="btn btn-primary" href="#culture">
-        Tìm hiểu văn hóa →
-      </a>
-    </div>
-
-    <div class="photo-frame">
-      <img
-        src="https://commons.wikimedia.org/wiki/Special:FilePath/R%E1%BB%ABng%20tr%C3%A0m%20Tr%C3%A0%20S%C6%B0.jpg?width=1200"
-        alt="Rừng tràm Trà Sư ở An Giang"
-        loading="lazy">
-
-      <div class="photo-tag">🌳 Thiên nhiên xanh mát</div>
-    </div>
-  </div>
+<section id="about" class="about">
+<h2 class="title">Giới thiệu về An Giang</h2>
+<div class="intro">
+<p>An Giang là vùng đất thuộc Đồng bằng sông Cửu Long, nổi bật với cảnh quan sông nước, vùng Thất Sơn, các công trình tín ngưỡng và sự đa dạng văn hóa của cộng đồng dân cư. Đây là địa phương có nhiều tiềm năng phát triển du lịch sinh thái, văn hóa và tâm linh.</p>
+</div>
 </section>
 
-<!-- THÔNG TIN NỔI BẬT -->
-<section class="stats">
-  <div class="container stats-grid">
-    <div class="stat">
-      <strong>Thất Sơn</strong>
-      <span>Vùng núi nổi tiếng của An Giang</span>
-    </div>
+<section id="places">
+<h2 class="title">Địa điểm du lịch nổi bật</h2>
+<p class="intro">Cùng khám phá những điểm đến đáng chú ý của An Giang.</p>
+<div class="grid">
 
-    <div class="stat">
-      <strong>Trà Sư</strong>
-      <span>Điểm đến sinh thái tiêu biểu</span>
-    </div>
+<article class="card">
+<img src="https://mia.vn/media/uploads/blog-du-lich/hanh-huong-nui-cam-tim-ve-noi-linh-thieng-va-ky-bi-o-vung-nam-bo-03-1660155614.jpeg" alt="Núi Cấm" loading="lazy">
+<div><span class="tag">Thiên nhiên</span><h3>Núi Cấm</h3>
+<p>Núi Cấm thuộc vùng Thất Sơn, nổi tiếng với cảnh quan núi rừng, khí hậu mát mẻ và các điểm tham quan tâm linh.</p></div>
+</article>
 
-    <div class="stat">
-      <strong>Châu Đốc</strong>
-      <span>Vùng đất văn hóa và tâm linh</span>
-    </div>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80" alt="Cảnh quan thiên nhiên" loading="lazy">
+<div><span class="tag">Tâm linh</span><h3>Miếu Bà Chúa Xứ Núi Sam</h3>
+<p>Đây là điểm hành hương nổi tiếng ở khu vực Núi Sam, gắn liền với tín ngưỡng và lễ hội truyền thống.</p></div>
+</article>
 
-    <div class="stat">
-      <strong>Đặc sản</strong>
-      <span>Hương vị miền Tây phong phú</span>
-    </div>
-  </div>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=900&q=80" alt="Rừng cây xanh" loading="lazy">
+<div><span class="tag">Sinh thái</span><h3>Rừng tràm Trà Sư</h3>
+<p>Điểm du lịch sinh thái được biết đến với hệ sinh thái rừng tràm và cảnh quan thiên nhiên vùng ngập nước.</p></div>
+</article>
+
+<article class="card">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Phong cảnh hồ và núi" loading="lazy">
+<div><span class="tag">Cảnh đẹp</span><h3>Hồ Tà Pạ</h3>
+<p>Khu vực Tà Pạ ở Tri Tôn thu hút du khách bởi cảnh quan hồ nước, núi đá và đồng ruộng xung quanh.</p></div>
+</article>
+
+<article class="card">
+<img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" alt="Kiến trúc chùa" loading="lazy">
+<div><span class="tag">Kiến trúc</span><h3>Chùa Tây An</h3>
+<p>Ngôi chùa nổi tiếng tại khu vực Núi Sam, có kiến trúc đặc sắc và giá trị văn hóa, tín ngưỡng.</p></div>
+</article>
+
+<article class="card">
+<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80" alt="Phong cảnh thiên nhiên" loading="lazy">
+<div><span class="tag">Khám phá</span><h3>Vùng Thất Sơn</h3>
+<p>Thất Sơn là vùng núi nổi tiếng của An Giang, gắn với cảnh quan đặc trưng và nhiều câu chuyện dân gian địa phương.</p></div>
+</article>
+
+</div>
 </section>
 
-<!-- ĐIỀU THÚ VỊ -->
-<section>
-  <div class="container">
-    <div class="center">
-      <span class="section-label">Điều làm nên khác biệt</span>
-      <h2>An Giang có gì thú vị?</h2>
-      <p class="section-intro">
-        Bốn trải nghiệm để bạn bắt đầu lên kế hoạch khám phá.
-      </p>
-    </div>
-
-    <div class="feature-grid">
-      <article class="feature">
-        <div class="emoji">⛰️</div>
-        <h3>Thiên nhiên đa dạng</h3>
-        <p>
-          Núi non, đồng ruộng, hồ nước và rừng tràm
-          tạo nên nhiều cảnh quan đặc sắc.
-        </p>
-      </article>
-
-      <article class="feature">
-        <div class="emoji">🏯</div>
-        <h3>Di tích văn hóa</h3>
-        <p>
-          Tham quan công trình tâm linh, tìm hiểu lịch sử
-          và những câu chuyện gắn với địa phương.
-        </p>
-      </article>
-
-      <article class="feature">
-        <div class="emoji">🍜</div>
-        <h3>Ẩm thực địa phương</h3>
-        <p>
-          Thưởng thức bún cá, bánh bò thốt nốt
-          và những món ăn mang hương vị miền Tây.
-        </p>
-      </article>
-
-      <article class="feature">
-        <div class="emoji">🚣</div>
-        <h3>Trải nghiệm sinh thái</h3>
-        <p>
-          Ngắm cảnh, chụp ảnh và tìm hiểu hệ sinh thái
-          tại các khu du lịch được phép tham quan.
-        </p>
-      </article>
-    </div>
-  </div>
+<section id="culture" class="about">
+<h2 class="title">Văn hóa An Giang</h2>
+<div class="intro">
+<p>An Giang là nơi giao thoa văn hóa của nhiều cộng đồng dân cư, trong đó có người Kinh, Khmer, Chăm và Hoa. Sự đa dạng này thể hiện qua kiến trúc, tín ngưỡng, lễ hội, trang phục và ẩm thực.</p>
+<br>
+<p>Khi tham quan nơi thờ tự, du khách nên ăn mặc lịch sự, giữ trật tự và tôn trọng phong tục địa phương.</p>
+</div>
 </section>
 
-<!-- ĐỊA ĐIỂM DU LỊCH -->
-<section class="places" id="places">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <span class
+<section id="food" class="food">
+<h2 class="title">Ẩm thực đặc sản</h2>
+<p class="intro">Ẩm thực góp phần tạo nên nét riêng của vùng đất An Giang.</p>
+<div class="grid">
+
+<article class="card">
+<img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=80" alt="Món mì nước" loading="lazy">
+<div><h3>Bún cá Châu Đốc</h3><p>Món bún nước nổi tiếng, thường ăn cùng cá và rau sống, có hương vị đặc trưng của miền Tây.</p></div>
+</article>
+
+<article class="card">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80" alt="Bánh ngọt" loading="lazy">
+<div><h3>Bánh bò thốt nốt</h3><p>Món bánh có nguyên liệu từ thốt nốt, thường có màu vàng nâu và vị ngọt thơm.</p></div>
+</article>
+
+<article class="card">
+<img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="Món ăn" loading="lazy">
+<div><h3>Đặc sản địa phương</h3><p>Du khách có thể tìm hiểu các món dân dã và sản phẩm địa phương tại chợ, cửa hàng uy tín.</p></div>
+</article>
+
+</div>
+</section>
+
+<section id="tips" class="tips">
+<h2 class="title">Kinh nghiệm du lịch</h2>
+<div class="intro">
+<ul style="display:inline-block;text-align:left;margin-top:15px">
+<li>Kiểm tra thời tiết và tuyến đường trước khi khởi hành.</li>
+<li>Chuẩn bị nước uống, nón và đồ chống nắng.</li>
+<li>Mặc trang phục lịch sự khi đến các địa điểm tâm linh.</li>
+<li>Hỏi giá trước khi sử dụng dịch vụ hoặc mua hàng.</li>
+<li>Không xả rác và cùng giữ gìn cảnh quan thiên nhiên.</li>
+<li>Kiểm tra giờ hoạt động và thông tin vé từ nguồn đáng tin cậy.</li>
+</ul>
+</div>
+</section>
+</main>
+
+<footer>
+<h3>🌿 KHÁM PHÁ AN GIANG</h3>
+<p>Thêm hiểu biết về quê hương — trân trọng thiên nhiên và văn hóa.</p>
+<p>Website phục vụ mục đích học tập và giới thiệu du lịch địa phương.</p>
+</footer>
+
+</body>
+</html>
