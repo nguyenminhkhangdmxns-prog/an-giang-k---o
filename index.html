@@ -2,167 +2,609 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khám phá An Giang</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An Giang – Miền đất hồn quê</title>
+
+<!-- Nhúng Google Fonts mới: Playfair Display cho tiêu đề & Montserrat cho nội dung -->
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;color:#173b35;line-height:1.7}
-header{background:#124638;color:white;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-header h2{font-size:21px}
-nav{display:flex;gap:15px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-size:14px}
-nav a:hover{color:#ffd66b}
-.hero{min-height:440px;padding:80px 8%;display:flex;align-items:center;color:white;background:linear-gradient(90deg,#092d25dd,#092d2533),url('https://mia.vn/media/uploads/blog-du-lich/hanh-huong-nui-cam-tim-ve-noi-linh-thieng-va-ky-bi-o-vung-nam-bo-03-1660155614.jpeg') center/cover}
-.hero h1{font-size:clamp(36px,6vw,64px);line-height:1.15}
-.hero p{max-width:650px;margin:18px 0;font-size:17px}
-.btn{display:inline-block;background:#ffd166;color:#173b35;padding:11px 20px;border-radius:25px;text-decoration:none;font-weight:bold}
-section{padding:55px 7%}
-h2.title{text-align:center;color:#14644e;font-size:32px;margin-bottom:12px}
-.intro{text-align:center;max-width:850px;margin:auto}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
-.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 4px 18px #163c3020;border:1px solid #e5eee8}
-.card img{width:100%;height:220px;object-fit:cover;display:block;background:#e8efeb}
-.card div{padding:18px}
-.card h3{color:#14644e;margin-bottom:8px}
-.card p{font-size:14px;color:#52675f}
-.tag{display:inline-block;background:#e1f4e9;color:#176445;border-radius:20px;padding:3px 10px;font-size:12px;margin-bottom:8px}
-.about{background:#eff7f1}
-.food{background:#fff9e9}
-.tips{background:#eff7f1}
-ul{padding-left:22px}
-li{margin:8px 0}
-footer{background:#103b31;color:white;text-align:center;padding:28px}
-@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:550px){.grid{grid-template-columns:1fr}header{justify-content:center}nav{justify-content:center}.hero{padding:55px 7%;min-height:400px}}
+:root {
+    --pine:#123f32;
+    --green:#24664c;
+    --gold:#e9bd62;
+    --cream:#f7f5ed;
+    --ink:#20372e;
+}
+
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    color:var(--ink);
+    background:white;
+    line-height:1.7;
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+.wrap {
+    width:min(1160px,90%);
+    margin:auto;
+}
+
+/* HEADER */
+header {
+    height:72px;
+    position:sticky;
+    top:0;
+    background:#ffffffed;
+    z-index:9;
+    box-shadow:0 3px 18px #0000000d;
+}
+
+.nav {
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size:24px;
+    font-weight:900;
+    color:var(--pine);
+}
+
+.brand b {
+    color:var(--gold);
+}
+
+nav {
+    display:flex;
+    gap:24px;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing: 0.5px;
+}
+
+nav a {
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color:#b4842d;
+}
+
+/* BANNER */
+.hero {
+    min-height:610px;
+    display:grid;
+    place-items:center;
+    text-align:center;
+    color:white;
+    background:
+    linear-gradient(90deg,#08291dcc,#08291d66),
+    url('https://angiang.gov.vn') center/cover;
+}
+
+.hero .wrap {
+    padding:100px 0;
+}
+
+.eyebrow {
+    letter-spacing:5px;
+    color:#f3d58e;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.hero h1 {
+    font:bold clamp(48px,8vw,88px)/1.1 'Playfair Display', Georgia, serif;
+    margin:20px 0;
+}
+
+.hero h1 span {
+    color:#f3d58e;
+}
+
+.hero p {
+    max-width:700px;
+    margin:auto;
+    font-size:17px;
+    font-weight: 300;
+}
+
+.btn {
+    display:inline-block;
+    margin-top:28px;
+    padding:13px 26px;
+    border-radius:30px;
+    background:var(--gold);
+    color:#183b2d;
+    font-weight:bold;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(233, 189, 98, 0.4);
+}
+
+/* SECTION */
+.section {
+    padding:82px 0;
+}
+
+.soft {
+    background:var(--cream);
+}
+
+.heading {
+    text-align:center;
+    margin:0 auto 42px;
+    max-width:750px;
+}
+
+.heading small {
+    color:#b18435;
+    letter-spacing:3px;
+    font-weight:bold;
+}
+
+.heading h2 {
+    font:bold clamp(30px,4vw,44px) 'Playfair Display', Georgia, serif;
+    color:var(--pine);
+    margin:9px 0 12px;
+}
+
+.heading p {
+    color:#69786f;
+    font-size: 15px;
+}
+
+/* INTRODUCTION */
+.intro {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:42px;
+    align-items:center;
+}
+
+.photo {
+    width:100%;
+    height:390px;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 14px 35px #163d2b20;
+}
+
+.intro h2 {
+    font:bold 38px 'Playfair Display', Georgia, serif;
+    color:var(--pine);
+    margin:8px 0 18px;
+}
+
+.intro p {
+    margin-bottom:12px;
+    color:#5e6f65;
+    font-size: 15px;
+}
+
+/* HIGHLIGHTS */
+.facts {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:32px;
+}
+
+.fact {
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 5px 20px #183c2b0b;
+}
+
+.fact img {
+    width:100%;
+    height:140px;
+    object-fit:cover;
+}
+
+.fact-text {
+    padding:13px;
+}
+
+.fact strong {
+    display:block;
+    font-size:18px;
+    color:var(--green);
+    font-family: 'Playfair Display', Georgia, serif;
+    margin-bottom:2px;
+}
+
+.fact span {
+    font-size:12px;
+    color:#68766d;
+}
+
+/* GENERAL CARD */
+.grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card {
+    border-radius:16px;
+    overflow:hidden;
+    background:white;
+    box-shadow:0 8px 25px #173e2b12;
+    transition:.25s;
+}
+
+.card:hover {
+    transform:translateY(-5px);
+}
+
+.card img {
+    height:220px;
+    width:100%;
+    object-fit:cover;
+    background:#dce8dd;
+}
+
+.card .body {
+    padding:20px;
+}
+
+.tag {
+    font-size:11px;
+    color:#a4772e;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.card h3 {
+    color:var(--pine);
+    font:bold 22px 'Playfair Display', Georgia, serif;
+    margin:7px 0;
+}
+
+.card p {
+    font-size:14px;
+    color:#64746a;
+}
+
+/* DESTINATIONS (Biến đổi grid hiển thị 2 cột) */
+#diemden .grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
+}
+
+#diemden .card {
+    display:grid;
+    grid-template-columns:42% 58%;
+    min-height:235px;
+    align-items:stretch;
+}
+
+#diemden .card img {
+    height:100%;
+    min-height:235px;
+    object-fit:cover;
+}
+
+#diemden .card .body {
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+#diemden .card h3 {
+    font-size:21px;
+}
+
+#diemden .card p {
+    font-size:13.5px;
+    line-height:1.75;
+}
+
+/* CULTURE */
+.two {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.culture {
+    display:flex;
+    align-items:stretch;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 6px 22px #183c2b0b;
+    min-height:240px;
+    transition:.3s;
+}
+
+.culture:hover {
+    transform:translateY(-5px);
+}
+
+.culture img {
+    width:42%;
+    object-fit:cover;
+    min-height:240px;
+}
+
+.culture div {
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    flex:1;
+}
+
+.culture h3 {
+    color:var(--pine);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    margin:5px 0;
+}
+
+.culture p {
+    font-size:14px;
+    color:#64746a;
+}
+
+/* FOOD */
+.food .card img {
+    height:210px;
+}
+
+/* ITINERARY */
+.plan {
+    max-width:900px;
+    margin:auto;
+}
+
+.day {
+    display:flex;
+    gap:22px;
+    align-items:center;
+    background:white;
+    padding:22px;
+    border-radius:14px;
+    margin:18px 0;
+    box-shadow:0 5px 18px #173e2b0b;
+}
+
+.day img {
+    width:230px;
+    height:155px;
+    object-fit:cover;
+    border-radius:10px;
+    flex-shrink:0;
+}
+
+.day b {
+    background:var(--pine);
+    color:white;
+    padding:12px;
+    border-radius:10px;
+    min-width:100px;
+    text-align:center;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.day-copy {
+    flex:1;
+}
+
+.day h3 {
+    color:var(--pine);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    margin-bottom:8px;
+}
+
+.day p {
+    font-size:14px;
+    color:#64746a;
+}
+
+/* GALLERY */
+.gallery {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.gallery img {
+    height:190px;
+    width:100%;
+    object-fit:cover;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.gallery img:hover {
+    transform:scale(1.04);
+}
+
+/* EXPERIENCE */
+.experience-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.experience-card {
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px #173e2b12;
+}
+
+.experience-card img {
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.experience-card div {
+    padding:20px;
+}
+
+.experience-card h3 {
+    color:var(--pine);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18px;
+    margin-bottom:8px;
+}
+
+.experience-card p {
+    color:#64746a;
+    font-size:14px;
+}
+
+/* TIPS */
+.tips-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.tip {
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px #173e2b12;
+}
+
+.tip img {
+    width:100%;
+    height:190px;
+    object-fit:cover;
+}
+
+.tip div {
+    padding:20px;
+}
+
+.tip h3 {
+    color:var(--pine);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18px;
+    margin-bottom:8px;
+}
+
+.tip p {
+    color:#64746a;
+    font-size:14px;
+}
+
+/* CALLOUT */
+.callout {
+    background:
+    linear-gradient(120deg,#103d30e8,#28664be0),
+    url('https://angiang.gov.vn') center/cover;
+    color:white;
+    text-align:center;
+    padding:85px 20px;
+}
+
+.callout h2 {
+    font:bold 38px 'Playfair Display', Georgia, serif;
+    margin-bottom:14px;
+}
+
+.callout p {
+    max-width:760px;
+    margin:auto;
+    color:#e2eee5;
+    font-weight: 300;
+}
+
+/* FOOTER */
+footer {
+    background:#0d2e24;
+    color:#d6e2d9;
+    padding:42px 0;
+    text-align:center;
+    font-size:13px;
+}
+
+footer strong {
+    color:#f1ce7e;
+}
+
+.credit {
+    margin-top:12px;
+    color:#aebfb3;
+    font-size:12px;
+}
+
+/* RESPONSIVE */
+@media(max-width:800px) {
+    nav {
+        gap:12px;
+        font-size:11px;
+    }
+    .intro {
+        grid-template-columns:1fr;
+    }
+    .grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+    #diemden .grid {
+        grid-template-columns:1fr;
+    }
+    .facts {
+        grid-template-columns:repeat(2,1fr);
+    }
+    .two {
+        grid-template-columns:1fr;
+    }
+    .gallery {
+        grid-template-columns:repeat(2,1fr);
+    }
+    .experience-grid,
+    .tips-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:540px) {
+    .section {
+        padding:60px 0;
+    }
+    .grid,
+    .experience-grid,
+    .tips-grid {
+        grid-template-columns:1fr;
+    }
+}
 </style>
 </head>
 <body>
 
-<header>
-<h2>🌿 KHÁM PHÁ AN GIANG</h2>
-<nav>
-<a href="#home">Trang chủ</a>
-<a href="#about">Giới thiệu</a>
-<a href="#places">Địa điểm</a>
-<a href="#culture">Văn hóa</a>
-<a href="#food">Ẩm thực</a>
-<a href="#tips">Kinh nghiệm</a>
-</nav>
-</header>
-
-<main>
-<section class="hero" id="home">
-<div>
-<h1>Khám phá<br>An Giang thân thương</h1>
-<p>Về với vùng đất miền Tây Nam Bộ, nơi có núi non hùng vĩ, những cánh rừng tràm xanh mát, di tích văn hóa đặc sắc và nền ẩm thực phong phú.</p>
-<a class="btn" href="#places">Khám phá ngay →</a>
-</div>
-</section>
-
-<section id="about" class="about">
-<h2 class="title">Giới thiệu về An Giang</h2>
-<div class="intro">
-<p>An Giang là vùng đất thuộc Đồng bằng sông Cửu Long, nổi bật với cảnh quan sông nước, vùng Thất Sơn, các công trình tín ngưỡng và sự đa dạng văn hóa của cộng đồng dân cư. Đây là địa phương có nhiều tiềm năng phát triển du lịch sinh thái, văn hóa và tâm linh.</p>
-</div>
-</section>
-
-<section id="places">
-<h2 class="title">Địa điểm du lịch nổi bật</h2>
-<p class="intro">Cùng khám phá những điểm đến đáng chú ý của An Giang.</p>
-<div class="grid">
-
-<article class="card">
-<img src="https://mia.vn/media/uploads/blog-du-lich/hanh-huong-nui-cam-tim-ve-noi-linh-thieng-va-ky-bi-o-vung-nam-bo-03-1660155614.jpeg" alt="Núi Cấm" loading="lazy">
-<div><span class="tag">Thiên nhiên</span><h3>Núi Cấm</h3>
-<p>Núi Cấm thuộc vùng Thất Sơn, nổi tiếng với cảnh quan núi rừng, khí hậu mát mẻ và các điểm tham quan tâm linh.</p></div>
-</article>
-
-<article class="card">
-<img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80" alt="Cảnh quan thiên nhiên" loading="lazy">
-<div><span class="tag">Tâm linh</span><h3>Miếu Bà Chúa Xứ Núi Sam</h3>
-<p>Đây là điểm hành hương nổi tiếng ở khu vực Núi Sam, gắn liền với tín ngưỡng và lễ hội truyền thống.</p></div>
-</article>
-
-<article class="card">
-<img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=900&q=80" alt="Rừng cây xanh" loading="lazy">
-<div><span class="tag">Sinh thái</span><h3>Rừng tràm Trà Sư</h3>
-<p>Điểm du lịch sinh thái được biết đến với hệ sinh thái rừng tràm và cảnh quan thiên nhiên vùng ngập nước.</p></div>
-</article>
-
-<article class="card">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Phong cảnh hồ và núi" loading="lazy">
-<div><span class="tag">Cảnh đẹp</span><h3>Hồ Tà Pạ</h3>
-<p>Khu vực Tà Pạ ở Tri Tôn thu hút du khách bởi cảnh quan hồ nước, núi đá và đồng ruộng xung quanh.</p></div>
-</article>
-
-<article class="card">
-<img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" alt="Kiến trúc chùa" loading="lazy">
-<div><span class="tag">Kiến trúc</span><h3>Chùa Tây An</h3>
-<p>Ngôi chùa nổi tiếng tại khu vực Núi Sam, có kiến trúc đặc sắc và giá trị văn hóa, tín ngưỡng.</p></div>
-</article>
-
-<article class="card">
-<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80" alt="Phong cảnh thiên nhiên" loading="lazy">
-<div><span class="tag">Khám phá</span><h3>Vùng Thất Sơn</h3>
-<p>Thất Sơn là vùng núi nổi tiếng của An Giang, gắn với cảnh quan đặc trưng và nhiều câu chuyện dân gian địa phương.</p></div>
-</article>
-
-</div>
-</section>
-
-<section id="culture" class="about">
-<h2 class="title">Văn hóa An Giang</h2>
-<div class="intro">
-<p>An Giang là nơi giao thoa văn hóa của nhiều cộng đồng dân cư, trong đó có người Kinh, Khmer, Chăm và Hoa. Sự đa dạng này thể hiện qua kiến trúc, tín ngưỡng, lễ hội, trang phục và ẩm thực.</p>
-<br>
-<p>Khi tham quan nơi thờ tự, du khách nên ăn mặc lịch sự, giữ trật tự và tôn trọng phong tục địa phương.</p>
-</div>
-</section>
-
-<section id="food" class="food">
-<h2 class="title">Ẩm thực đặc sản</h2>
-<p class="intro">Ẩm thực góp phần tạo nên nét riêng của vùng đất An Giang.</p>
-<div class="grid">
-
-<article class="card">
-<img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=80" alt="Món mì nước" loading="lazy">
-<div><h3>Bún cá Châu Đốc</h3><p>Món bún nước nổi tiếng, thường ăn cùng cá và rau sống, có hương vị đặc trưng của miền Tây.</p></div>
-</article>
-
-<article class="card">
-<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80" alt="Bánh ngọt" loading="lazy">
-<div><h3>Bánh bò thốt nốt</h3><p>Món bánh có nguyên liệu từ thốt nốt, thường có màu vàng nâu và vị ngọt thơm.</p></div>
-</article>
-
-<article class="card">
-<img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="Món ăn" loading="lazy">
-<div><h3>Đặc sản địa phương</h3><p>Du khách có thể tìm hiểu các món dân dã và sản phẩm địa phương tại chợ, cửa hàng uy tín.</p></div>
-</article>
-
-</div>
-</section>
-
-<section id="tips" class="tips">
-<h2 class="title">Kinh nghiệm du lịch</h2>
-<div class="intro">
-<ul style="display:inline-block;text-align:left;margin-top:15px">
-<li>Kiểm tra thời tiết và tuyến đường trước khi khởi hành.</li>
-<li>Chuẩn bị nước uống, nón và đồ chống nắng.</li>
-<li>Mặc trang phục lịch sự khi đến các địa điểm tâm linh.</li>
-<li>Hỏi giá trước khi sử dụng dịch vụ hoặc mua hàng.</li>
-<li>Không xả rác và cùng giữ gìn cảnh quan thiên nhiên.</li>
-<li>Kiểm tra giờ hoạt động và thông tin vé từ nguồn đáng tin cậy.</li>
-</ul>
-</div>
-</section>
-</main>
-
-<footer>
-<h3>🌿 KHÁM PHÁ AN GIANG</h3>
-<p>Thêm hiểu biết về quê hương — trân trọng thiên nhiên và văn hóa.</p>
-<p>Website phục vụ mục đích học tập và giới thiệu du lịch địa phương.</p>
-</footer>
-
-</body>
-</html>
+    <!-- HEADER NAVIGATION -->
